@@ -1,34 +1,77 @@
-import { Link } from "react-router-dom";
-import "./Register.css";
+import { Link, useNavigate } from "react-router-dom";
+import styles from "./Register.module.css";
+import { useState } from "react";
+import axios from "axios";
+
 const Register = () => {
+  const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const navigate = useNavigate();
+
+  const registration = async (e) => {
+    e.preventDefault();
+    await axios
+      .post(
+        "http://localhost:8000/register",
+        {
+          email: email,
+          username: username,
+          password: password,
+        },
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      )
+      .then((response) => {
+        console.log("response", response);
+        navigate("/login");
+      })
+      .catch((error) => error.response.data.message);
+  };
+
   return (
-    <div className="login">
-      <form>
-        <h2>Register</h2>
-        <input
-          className="input"
-          type="email"
-          name="email"
-          placeholder="email@email.com"
-        />
-        <input
-          className="input"
-          type="text"
-          name="username"
-          placeholder="username"
-        />
-        <input
-          className="input"
-          type="password"
-          name="password"
-          placeholder="Password"
-        />
-        <input className="animated" type="submit" value="Register"></input>
-      </form>
-      <Link to="/login">
-        <span className="forgot">Already have an account?</span>
-      </Link>
-      <span className="forgot">Back to home page</span>
+    <div className={styles.componentReg}>
+      <div className={styles.login}>
+        <form autoComplete="off" onSubmit={registration}>
+          <h2>Register</h2>
+          <input
+            className={styles.input}
+            type="email"
+            name="email"
+            placeholder="email@email.com"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <input
+            className={styles.input}
+            type="text"
+            name="username"
+            placeholder="username"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+          />
+          <input
+            className={styles.input}
+            type="password"
+            name="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <input
+            className={styles.animated}
+            type="submit"
+            value="Register"
+          ></input>
+        </form>
+        <Link to="/login">
+          <span className={styles.forgot}>Already have an account?</span>
+        </Link>
+        <span className={styles.forgot}>Back to home page</span>
+      </div>
     </div>
   );
 };
