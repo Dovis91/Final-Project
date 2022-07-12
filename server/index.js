@@ -3,6 +3,9 @@ import "dotenv/config";
 import express, { urlencoded } from "express";
 import cookieParser from "cookie-parser";
 
+// Routų importas
+import regRouter from "./routes/register.js";
+
 // expresso ir porto užkūrimas
 const app = express();
 const PORT = process.env.PORT || 6000;
@@ -11,6 +14,9 @@ const PORT = process.env.PORT || 6000;
 app.use(cookieParser());
 app.use(express.json());
 app.use(urlencoded({ extended: false }));
+
+// Routų panaudojimas
+app.use("/register", regRouter);
 
 //Serveriuko paleidimas! 🖥
 app.listen(PORT, console.log(`Serveris paleistas ant ${PORT} porto`));
