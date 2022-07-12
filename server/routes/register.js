@@ -29,18 +29,12 @@ regRouter.post("/", async (req, res) => {
                   `,
       [rb.username, rb.email, hashedPassword]
     );
+    console.log(req.body);
     const token = jwt.sign(
       { id: newUser[0].insertId, username: rb.username, email: rb.email },
-      jwtSecret,
-      {
-        expiresIn: "1d",
-      }
+      jwtSecret
     );
-    return res
-      .cookie("token", token, {
-        maxAge: 24 * 60 * 60 * 1000,
-      })
-      .json({ msg: "registration completed" });
+    return res.json({ token: token });
   } catch (err) {
     return res.status(500).send(err);
   }

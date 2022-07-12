@@ -1,7 +1,7 @@
 //Pagrindiniai moduliai ir jų importas
 import "dotenv/config";
 import express, { urlencoded } from "express";
-import cookieParser from "cookie-parser";
+import cors from "cors";
 
 // Routų importas
 import regRouter from "./routes/register.js";
@@ -12,7 +12,7 @@ const app = express();
 const PORT = process.env.PORT || 6000;
 
 // Visi reikalingi modulių use'ai
-app.use(cookieParser());
+app.use(cors());
 app.use(express.json());
 app.use(urlencoded({ extended: false }));
 
