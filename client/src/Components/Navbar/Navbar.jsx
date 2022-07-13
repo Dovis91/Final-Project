@@ -1,45 +1,66 @@
-import "./Navbar.css";
+import styles from "./Navbar.module.css";
+import { Link, useNavigate } from "react-router-dom";
 
-const Navbar = () => {
+const Navbar = ({ userLoggedIn, setUserLoggedIn }) => {
+  const navigate = useNavigate();
+
+  const logout = () => {
+    localStorage.removeItem("token");
+    setUserLoggedIn(false);
+    navigate("/login");
+  };
+
   return (
-    <nav>
-      <ul class="menu">
-        <div>
-          <img
-            src="https://seeklogo.com/images/F/formstack-logo-D5787F63EE-seeklogo.com.png"
-            alt="formstack logo"
-            className="logo"
-          />
-        </div>
-        <li>
-          {" "}
-          <a href="/login">Login</a>
-        </li>
-        <li>
-          {" "}
-          <a href="/Register">Register</a>
-        </li>
-      </ul>
-      {/* <ul class="menu">
-        <div>
-          <img
-            src="https://seeklogo.com/images/F/formstack-logo-D5787F63EE-seeklogo.com.png"
-            alt="formstack logo"
-            className="logo"
-          />
-        </div>
-        <li>
-          <a href="" onclick="logout()">
-            Logout
-          </a>
-        </li>
-        <li>
-          <a href="/addblog">Add Article</a>
-        </li>
-        <li>
-          <a href="/userarticles">User:</a>
-        </li>
-      </ul> */}
+    <nav className={styles.navigation}>
+      {userLoggedIn ? (
+        <ul className={styles.menu}>
+          <div>
+            <img
+              src="https://seeklogo.com/images/F/formstack-logo-D5787F63EE-seeklogo.com.png"
+              alt="formstack logo"
+              className={styles.logo}
+            />
+          </div>
+          <div className={styles.body}>
+            <div className={styles.button}>
+              <Link to="create">
+                <li>Add Question</li>
+              </Link>
+            </div>
+          </div>
+          <div className={styles.body}>
+            <div className={styles.button}>
+              <Link to="/" onClick={() => logout()}>
+                <li>Logout</li>
+              </Link>
+            </div>
+          </div>
+        </ul>
+      ) : (
+        <ul className={styles.menu}>
+          <div>
+            <img
+              src="https://seeklogo.com/images/F/formstack-logo-D5787F63EE-seeklogo.com.png"
+              alt="formstack logo"
+              className={styles.logo}
+            />
+          </div>
+          <div className={styles.body}>
+            <div className={styles.button}>
+              <Link to="login">
+                <li>Login</li>
+              </Link>
+            </div>
+          </div>
+          <div className={styles.body}>
+            <div className={styles.button}>
+              <Link to="register">
+                <li>Register</li>
+              </Link>
+            </div>
+          </div>
+        </ul>
+      )}
     </nav>
   );
 };
