@@ -7,6 +7,8 @@ import cors from "cors";
 import regRouter from "./routes/register.js";
 import logRouter from "./routes/login.js";
 import questionRouter from "./routes/questions.js";
+import userQuestions from "./routes/userQuestions.js";
+import answers from "./routes/answers.js";
 
 // expresso ir porto užkūrimas
 const app = express();
@@ -21,6 +23,8 @@ app.use(urlencoded({ extended: false }));
 app.use("/register", regRouter);
 app.use("/login", logRouter);
 app.use("/questions", questionRouter);
+app.use("/userquestions", userQuestions);
+app.use("/answers", answers);
 
 //Serveriuko paleidimas! 🖥
 app.listen(PORT, console.log(`Serveris paleistas ant ${PORT} porto`));

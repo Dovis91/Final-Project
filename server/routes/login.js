@@ -28,7 +28,11 @@ logRouter.post("/", async (req, res) => {
         { id: data[0].id, email: data[0].email, username: data[0].username },
         jwtSecret
       );
-      return res.json({ token: token });
+      return res.json({
+        token: token,
+        username: data[0].username,
+        id: data[0].id,
+      });
     } else {
       res.status(400).send({ error: `Netinkamas email arba password.` });
     }
