@@ -1,0 +1,153 @@
+.homeDiv {
+  margin-top: 2rem;
+}
+
+.questionsDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 3rem;
+}
+
+.userQuestionsH3 {
+  display: flex;
+  justify-content: left;
+  margin: 0 auto;
+  padding-top: 15px;
+  width: 600px;
+  color: rgb(207, 207, 207);
+}
+
+.questionCard {
+  width: 600px;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.315);
+  border-left: 1px solid rgba(128, 128, 128, 0.315);
+}
+.questionCard a {
+  text-decoration: none;
+}
+
+.questionH4 {
+  font-weight: 100;
+  margin-left: 10px;
+  margin-right: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: rgb(93, 144, 192);
+  padding-left: 1rem;
+}
+
+.questionP {
+  display: flex;
+  justify-content: flex-end;
+  font-size: small;
+  margin-right: 10px;
+}
+.editInput {
+  width: 200px;
+  border: none;
+  border-bottom: 2px solid #7aa7c7;
+  padding-top: 17px;
+  padding-left: 17px;
+  background: none;
+  color: #a0c7e4;
+  font-size: large;
+}
+.editInput:focus {
+  outline: none;
+}
+
+.btnEditDiv {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.singleQbtn {
+  background-color: #4b93c7;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  box-shadow: rgba(255, 255, 255, 0.4) 0 1px 0 0 inset;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system, system-ui, "Segoe UI", "Liberation Sans",
+    sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.15385;
+  margin: 0;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  outline: none;
+  padding: 1px 0.6em;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  white-space: nowrap;
+}
+
+.singleQbtn:hover,
+.singleQbtn:focus {
+  background-color: #07c;
+}
+
+.singleQbtn:focus {
+  box-shadow: 0 0 0 4px rgba(0, 149, 255, 0.15);
+}
+
+.singleQbtn:active {
+  background-color: #0064bd;
+  box-shadow: none;
+}
+
+.btnDel {
+  background-color: #33536d;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  box-shadow: rgba(255, 255, 255, 0.4) 0 1px 0 0 inset;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system, system-ui, "Segoe UI", "Liberation Sans",
+    sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.15385;
+  margin: 0;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  outline: none;
+  padding: 1px 0.6em;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  white-space: nowrap;
+}
+
+.btnDel:hover,
+.btnDel:focus {
+  background-color: rgb(187, 19, 19);
+}
+
+.btnDel:focus {
+  box-shadow: 0 0 0 4px rgba(0, 149, 255, 0.15);
+}
+
+.btnDel:active {
+  background-color: #0064bd;
+  box-shadow: none;
+}
