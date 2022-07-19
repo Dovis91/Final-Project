@@ -1,60 +1,127 @@
 /*----- NAV BAR ------*/
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
 
-.logo {
-  display: flex;
-  justify-content: right;
-  width: 200px;
-}
-
 .menu {
-  font-family: "Quicksand";
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   max-width: 720px;
   margin: 0 auto;
-  height: 10vh;
   list-style: none;
   border-bottom: 2px solid #747474;
-}
-.menu a {
-  text-decoration: none;
-  color: #66cdaa;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  position: sticky;
 }
 
-.button {
-  width: 100px;
+.logo {
+  width: 125px;
+}
+
+.userlogo {
   height: 50px;
+}
+.logoDiv {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.btnDiv {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+}
+
+.userDiv {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+}
+
+.username {
+  color: #71a0c4;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #2e6085;
+}
+
+.btnLoggedIn {
+  background-color: #e1ecf4;
+  border-radius: 3px;
+  border: 1px solid #7aa7c7;
+  box-shadow: rgba(255, 255, 255, 0.7) 0 1px 0 0 inset;
+  box-sizing: border-box;
+  color: #39739d;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system, system-ui, "Segoe UI", "Liberation Sans",
+    sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.15385;
+  margin: 0;
+  outline: none;
+  padding: 8px 15px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  white-space: nowrap;
+}
+
+.btnLoggedIn:hover,
+.btnLoggedIn:focus {
+  background-color: #b3d3ea;
+  color: #2c5777;
+}
+
+.btnLoggedIn:focus {
+  box-shadow: 0 0 0 4px rgba(0, 149, 255, 0.15);
+}
+
+.btnLoggedIn:active {
+  background-color: #a0c7e4;
+  box-shadow: none;
+  color: #2c5777;
+}
+
+/* .button {
+  width: 100px;
+  height: 40px;
   background: #f3f0f1;
   position: relative;
   background: #f3f0f1;
-  margin-bottom: 10px;
-  border-radius: 32px;
+  border-radius: 15px;
   text-align: center;
   cursor: pointer;
   transition: all 0.1s ease-in-out;
 }
-.body .button li {
-  line-height: 50px;
+.button li {
+  line-height: 40px;
   font-family: "Montserrat", sans-serif;
   font-size: 15px;
-  font-weight: semibold;
+  font-weight: bold;
   text-decoration: none;
 }
-.body .button:nth-child(1) {
-  box-shadow: -6px -6px 10px rgba(255, 255, 255, 0.8),
-    6px 6px 10px rgba(0, 0, 0, 0.2);
+.button:nth-child(1) {
+  box-shadow: 1px 1px 1px rgba(255, 255, 255, 0.8),
+    6px 6px 0px rgba(0, 0, 0, 0.2);
   color: #6f6cde;
 }
-.body .button:nth-child(1):hover {
+.button:nth-child(1):hover {
   opacity: 0.3;
-  box-shadow: -6px -6px 10px rgba(255, 255, 255, 0.8),
-    6px 6px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 1px 1px 1px rgba(255, 255, 255, 0.8),
+    6px 6px 0px rgba(0, 0, 0, 0.2);
 }
-.body .button:nth-child(1):active {
+.button:nth-child(1):active {
   opacity: 1;
   box-shadow: inset -4px -4px 8px rgba(255, 255, 255, 0.5),
     inset 8px 8px 16px rgba(0, 0, 0, 0.1);
   color: #79e3b6;
-}
+} */

@@ -1,37 +1,37 @@
 import styles from "./Navbar.module.css";
 import { Link, useNavigate } from "react-router-dom";
+import userlogo from "../images/User.png";
+import alus from "../images/Alus.png";
 
-const Navbar = ({ userLoggedIn, setUserLoggedIn }) => {
+const Navbar = ({ userLoggedIn, setUserLoggedIn, userName }) => {
   const navigate = useNavigate();
 
   const logout = () => {
     localStorage.removeItem("token");
     setUserLoggedIn(false);
-    navigate("/login");
+    navigate("/");
   };
 
   return (
     <nav className={styles.navigation}>
       {userLoggedIn ? (
         <ul className={styles.menu}>
-          <div>
-            <img
-              src="https://seeklogo.com/images/F/formstack-logo-D5787F63EE-seeklogo.com.png"
-              alt="formstack logo"
-              className={styles.logo}
-            />
+          <div className={styles.logoDiv}>
+            <a href="../">
+              <img src={alus} alt="formstack logo" className={styles.logo} />
+            </a>
           </div>
-          <div className={styles.body}>
-            <div className={styles.button}>
-              <Link to="create">
-                <li>Add Question</li>
-              </Link>
-            </div>
-          </div>
-          <div className={styles.body}>
-            <div className={styles.button}>
-              <Link to="/" onClick={() => logout()}>
-                <li>Logout</li>
+          <div className={styles.btnDiv}>
+            <Link to="create">
+              <button className={styles.btnLoggedIn}>Create</button>
+            </Link>
+            <Link to="/" onClick={() => logout()}>
+              <button className={styles.btnLoggedIn}>Logout</button>
+            </Link>
+            <div className={styles.userDiv}>
+              <img src={userlogo} alt="useris" className={styles.userlogo} />
+              <Link to="/userquestions">
+                <h3 className={styles.username}>{userName}</h3>
               </Link>
             </div>
           </div>
@@ -39,23 +39,18 @@ const Navbar = ({ userLoggedIn, setUserLoggedIn }) => {
       ) : (
         <ul className={styles.menu}>
           <div>
-            <img
-              src="https://seeklogo.com/images/F/formstack-logo-D5787F63EE-seeklogo.com.png"
-              alt="formstack logo"
-              className={styles.logo}
-            />
+            <a href="../">
+              <img src={alus} alt="formstack logo" className={styles.logo} />
+            </a>
           </div>
           <div className={styles.body}>
-            <div className={styles.button}>
+            <div className={styles.btnDiv}>
               <Link to="login">
-                <li>Login</li>
+                <button className={styles.btnLoggedIn}>Login</button>
               </Link>
-            </div>
-          </div>
-          <div className={styles.body}>
-            <div className={styles.button}>
+
               <Link to="register">
-                <li>Register</li>
+                <button className={styles.btnLoggedIn}>Sing up</button>
               </Link>
             </div>
           </div>
