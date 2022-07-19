@@ -1,3 +1,50 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+
+body {
+  position: relative;
+  background: linear-gradient(to right, #141e30, #253b55);
+  font-family: "Poppins", sans-serif !important;
+}
+
+.searchForm {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  width: 740px;
+  margin-top: 15px;
+}
+
+.inputDiv {
+  display: flex;
+  align-items: flex-end;
+  border-radius: 5px;
+}
+.search {
+  width: 200px;
+  border: none;
+  border-bottom: 2px solid #7aa7c7;
+  padding-top: 17px;
+  padding-left: 17px;
+  background: none;
+  color: #a0c7e4;
+  font-size: large;
+}
+
+.search:focus {
+  outline: none;
+}
+
+.search::placeholder {
+  font-size: large;
+  color: #a0c7e4;
+}
+
+.homeDiv {
+  margin-top: 2rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
 .questionsDiv {
   display: flex;
   flex-direction: column;
@@ -9,9 +56,25 @@
   display: flex;
   justify-content: left;
   margin: 0 auto;
-  padding-top: 15px;
+  padding-top: 5rem;
+  padding-bottom: 15px;
   width: 600px;
-  color: #000;
+  color: rgb(192, 210, 226);
+}
+
+.selectDiv {
+  display: flex;
+  justify-content: right;
+}
+
+.orderBySelect {
+  padding: 3px;
+  border: 1px solid #7aa7c7;
+  border-radius: 3px;
+  background-color: #a1c0d8;
+  margin-right: 55px;
+  cursor: pointer;
+  color: #2e6085;
 }
 
 .questionCard {
@@ -21,10 +84,13 @@
   border-bottom: 1px solid rgba(128, 128, 128, 0.315);
   border-left: 1px solid rgba(128, 128, 128, 0.315);
 }
+.questionCard a {
+  text-decoration: none;
+}
 
 .questionH4 {
-  color: rgb(112, 178, 240);
-  font-weight: 100;
+  color: rgb(93, 144, 192);
+  font-weight: 400;
   margin-left: 10px;
   margin-right: 10px;
   white-space: nowrap;
@@ -34,7 +100,68 @@
 
 .questionP {
   display: flex;
-  justify-content: end;
+  justify-content: right;
   font-size: small;
   margin-right: 10px;
+  color: #9ca3a8;
+}
+
+.questionEdited {
+  display: flex;
+  justify-content: right;
+  font-weight: 100;
+  margin-top: 10px;
+  font-size: smaller;
+  color: #9ca3a8;
+}
+
+.srcBtnDiv {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.searchBtn {
+  display: flex;
+  background-color: #e1ecf4;
+  border-radius: 4px;
+  border: 1px solid #7aa7c7;
+  box-shadow: rgba(255, 255, 255, 0.7) 0 1px 0 0 inset;
+  box-sizing: border-box;
+  color: #2e6085;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system, system-ui, "Segoe UI", "Liberation Sans",
+    sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.15385;
+  margin: 0;
+  outline: none;
+  margin-left: 10px;
+  padding: 2px 10px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  white-space: nowrap;
+}
+
+.searchBtn:hover,
+.searchBtn:focus {
+  background-color: #b3d3ea;
+  color: #2c5777;
+}
+
+.searchBtn:focus {
+  box-shadow: 0 0 0 4px rgba(0, 149, 255, 0.15);
+}
+
+.searchBtn:active {
+  background-color: #a0c7e4;
+  box-shadow: none;
+  color: #2c5777;
 }
