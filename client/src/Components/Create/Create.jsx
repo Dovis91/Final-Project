@@ -39,7 +39,7 @@ const Create = () => {
 
   return (
     <div className={styles.create}>
-      <h3 className={styles.formH3}>Your question are... ⁉</h3>
+      <h3 className={styles.questiontitle}>Have something to say..?!</h3>
       <form onSubmit={handleSubmit}>
         <textarea
           className={styles.formText}
@@ -50,9 +50,11 @@ const Create = () => {
           value={question}
           onChange={(e) => setQuestion(e.target.value)}
         ></textarea>
-        {!isPending && <button className={styles.addButton}>Post</button>}
+        {!isPending && (
+          <button className={styles.buttonPost}>Post Question</button>
+        )}
         {isPending && (
-          <button className={styles.addButton} disabled>
+          <button className={styles.buttonPost} disabled>
             Posting....
           </button>
         )}
