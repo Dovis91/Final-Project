@@ -6,29 +6,52 @@ import Register from "./Components/LoginRegister/Register";
 import Login from "./Components/LoginRegister/Login";
 import Home from "./Components/Home/Home";
 import Create from "./Components/Create/Create";
+import SingleQuestion from "./Components/SingleQuestion/SingleQuestion";
+import UserQuestions from "./Components/UserQuestions/UserQuestions";
 
 function App() {
   const navigate = useNavigate();
   const [userLoggedIn, setUserLoggedIn] = useState(false);
+  const [userName, setUserName] = useState(false);
+  const [userId, setUserId] = useState("");
   useEffect(() => {
     const token = localStorage.getItem("token");
-    if (token) {
+    const userName = localStorage.getItem("username");
+    const userId = localStorage.getItem("user_id");
+    if (token && userName && userId) {
       setUserLoggedIn(true);
-      navigate("/");
+      setUserName(userName);
+      setUserId(userId);
     }
-  }, []);
+  }, [navigate]);
 
   return (
     <div className="App">
-      <Navbar userLoggedIn={userLoggedIn} setUserLoggedIn={setUserLoggedIn} />
+      <Navbar
+        userLoggedIn={userLoggedIn}
+        setUserLoggedIn={setUserLoggedIn}
+        userName={userName}
+      />
       <Routes>
         <Route path="/" element={<Home userLoggedIn={userLoggedIn} />} />
         <Route path="/register" element={<Register />} />
         <Route
           path="/login"
-          element={<Login setUserLoggedIn={setUserLoggedIn} />}
+          element={
+            <Login
+              setUserLoggedIn={setUserLoggedIn}
+              setUserName={setUserName}
+            />
+          }
         />
         <Route path="/create" element={<Create />} />
+        <Route
+          path="/questions/:id"
+          element={
+            <SingleQuestion userLoggedIn={userLoggedIn} userId={userId} />
+          }
+        />
+        <Route path="/userquestions" element={<UserQuestions />} />
       </Routes>
     </div>
   );
