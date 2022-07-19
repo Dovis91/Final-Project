@@ -3,31 +3,18 @@
   padding: 0;
 }
 
-body {
-  /* background: #2e3740; */
-  color: #435160;
-  font-family: "Sofia", cursive;
-}
-
-/* .componentLog {
-  background-color: #2e3740;
-  color: #435160;
-  font-family: "Sofia", cursive;
-} */
-
 h2 {
-  color: #6d7781;
-  font-family: "Sofia", cursive;
+  color: #a1a5aa;
   font-size: 15px;
   font-weight: bold;
   font-size: 3.6em;
   text-align: center;
   margin-bottom: 20px;
-  margin-top: 20px;
+  margin-top: 10rem;
 }
 
 span {
-  color: #435160;
+  color: #a1a5aa;
   text-decoration: none;
 }
 
@@ -39,21 +26,20 @@ span {
   left: 50%;
   margin-left: -175px;
 }
+.login a {
+  text-decoration: none;
+}
 
-input[type="email"],
-input[type="password"] {
+.inputRegLog[type="email"],
+.inputRegLog[type="password"] {
   width: 350px;
   padding: 20px 0px;
   background: transparent;
   border: 0;
   border-bottom: 1px solid #435160;
   outline: none;
-  color: #6d7781;
+  color: #a1a5aa;
   font-size: 16px;
-}
-
-input[type="checkbox"] {
-  display: none;
 }
 
 label {
@@ -67,15 +53,15 @@ label {
   content: "";
   transition: all 0.3s ease-in-out;
   cursor: pointer;
-  border: 3px solid #435160;
+  border: 3px solid #a1a5aa;
 }
 
 #agree:checked ~ label[for="agree"] {
   background: #435160;
 }
 
-input[type="submit"] {
-  background: #66cdaa;
+.animated[type="submit"] {
+  background: #2e6085;
   border: 0;
   width: 350px;
   height: 40px;
@@ -85,8 +71,8 @@ input[type="submit"] {
   cursor: pointer;
   transition: background 0.3s ease-in-out;
 }
-input[type="submit"]:hover {
-  background: #16aa56;
+.animated[type="submit"]:hover {
+  background: #2e6085;
   animation-name: shake;
 }
 
@@ -96,6 +82,7 @@ input[type="submit"]:hover {
   font-size: 11px;
   text-align: center;
   font-weight: bold;
+  text-decoration: none;
 }
 .forgot:hover {
   margin-top: 30px;
@@ -103,14 +90,7 @@ input[type="submit"]:hover {
   font-size: 11px;
   text-align: center;
   font-weight: bold;
-  color: #6d7781;
-}
-
-.agree {
-  padding: 30px 0px;
-  font-size: 12px;
-  text-indent: 25px;
-  line-height: 15px;
+  color: #a1a5aa;
 }
 
 ::-webkit-input-placeholder {

@@ -3,7 +3,7 @@ import { useState } from "react";
 import styles from "./Login.module.css";
 import axios from "axios";
 
-const Login = ({ setUserLoggedIn }) => {
+const Login = ({ setUserLoggedIn, setUserName }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
@@ -27,7 +27,10 @@ const Login = ({ setUserLoggedIn }) => {
         if (response.data.token) {
           console.log("response", response);
           localStorage.setItem("token", response.data.token);
+          localStorage.setItem("username", response.data.username);
+          localStorage.setItem("user_id", response.data.id);
           setUserLoggedIn(true);
+          setUserName("");
           navigate("/");
         }
       })
@@ -40,7 +43,7 @@ const Login = ({ setUserLoggedIn }) => {
         <form autoComplete="off" onSubmit={login}>
           <h2>Login</h2>
           <input
-            className={styles.input}
+            className={styles.inputRegLog}
             type="email"
             name="email"
             placeholder="example@example.com"
@@ -48,7 +51,7 @@ const Login = ({ setUserLoggedIn }) => {
             onChange={(e) => setEmail(e.target.value)}
           />
           <input
-            className={styles.input}
+            className={styles.inputRegLog}
             type="password"
             name="password"
             placeholder="Password"
@@ -64,7 +67,9 @@ const Login = ({ setUserLoggedIn }) => {
         <Link to="/register">
           <span className={styles.forgot}>Don't have account?</span>
         </Link>
-        <span className={styles.forgot}>Back to home page</span>
+        <Link to="/">
+          <span className={styles.forgot}>Back to home page</span>
+        </Link>
       </div>
     </div>
   );
