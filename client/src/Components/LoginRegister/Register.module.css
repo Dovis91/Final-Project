@@ -4,13 +4,13 @@
 }
 
 h2 {
-  color: #6d7781;
+  color: #a1a5aa;
   font-size: 15px;
   font-weight: bold;
   font-size: 3.6em;
   text-align: center;
   margin-bottom: 20px;
-  margin-top: 20px;
+  margin-top: 10rem;
 }
 
 span {
@@ -26,9 +26,13 @@ span {
   margin-left: -175px;
 }
 
-input[type="text"],
-input[type="email"],
-input[type="password"] {
+.login a {
+  text-decoration: none;
+}
+
+.inputRegLog[type="text"],
+.inputRegLog[type="email"],
+.inputRegLog[type="password"] {
   width: 350px;
   padding: 20px 0px;
   background: transparent;
@@ -37,10 +41,6 @@ input[type="password"] {
   outline: none;
   color: #6d7781;
   font-size: 16px;
-}
-
-input[type="checkbox"] {
-  display: none;
 }
 
 label {
@@ -61,8 +61,8 @@ label {
   background: #435160;
 }
 
-input[type="submit"] {
-  background: #66cdaa;
+.animated[type="submit"] {
+  background: #2e6085;
   border: 0;
   width: 350px;
   height: 40px;
@@ -72,8 +72,8 @@ input[type="submit"] {
   cursor: pointer;
   transition: background 0.3s ease-in-out;
 }
-input[type="submit"]:hover {
-  background: #16aa56;
+.animated[type="submit"]:hover {
+  background: #2e6085;
   animation-name: shake;
 }
 

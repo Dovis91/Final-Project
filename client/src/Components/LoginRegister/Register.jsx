@@ -38,7 +38,7 @@ const Register = () => {
         <form autoComplete="off" onSubmit={registration}>
           <h2>Register</h2>
           <input
-            className={styles.input}
+            className={styles.inputRegLog}
             type="email"
             name="email"
             placeholder="email@email.com"
@@ -46,7 +46,7 @@ const Register = () => {
             onChange={(e) => setEmail(e.target.value)}
           />
           <input
-            className={styles.input}
+            className={styles.inputRegLog}
             type="text"
             name="username"
             placeholder="username"
@@ -54,7 +54,7 @@ const Register = () => {
             onChange={(e) => setUsername(e.target.value)}
           />
           <input
-            className={styles.input}
+            className={styles.inputRegLog}
             type="password"
             name="password"
             placeholder="Password"
@@ -70,7 +70,9 @@ const Register = () => {
         <Link to="/login">
           <span className={styles.forgot}>Already have an account?</span>
         </Link>
-        <span className={styles.forgot}>Back to home page</span>
+        <Link to="/">
+          <span className={styles.forgot}>Back to home page</span>
+        </Link>
       </div>
     </div>
   );
