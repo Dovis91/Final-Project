@@ -9,7 +9,6 @@ const router = express.Router();
 router.get("/", async (req, res) => {
   await isAuth(req);
 
-  console.log(req.token);
   const [data] = await con.query(
     `
       SELECT * FROM questions WHERE user_id = ${req.token.id}
@@ -34,7 +33,6 @@ router.delete("/:id", async (req, res) => {
 router.put("/:id", async (req, res) => {
   await isAuth(req);
 
-  console.log(req.token);
   const [data] = await con.query(
     `
       UPDATE questions SET question = ?, edited = ? WHERE user_id = ? AND id = ?
